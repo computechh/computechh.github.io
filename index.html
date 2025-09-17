@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Computechh | Tienda de cómputo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <!-- Header -->
+  <header class="site-header">
+    <div class="logo">Computechh</div>
+
+    <!-- Botón hamburguesa SIN JS -->
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
+    <label for="nav-toggle" class="nav-toggle-btn" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </label>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar productos...">
+      <button type="submit">🔍</button>
+    </div>
+
+    <nav class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#productos">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="inicio" class="hero" aria-label="Presentación">
+
+    <!-- Carrusel lateral izquierdo (2 imágenes) -->
+    <aside class="hero-left-rotator" aria-hidden="true">
+      <figure class="side-slide s1">
+        <img src="img/paqueteria.jpg" alt="Entrega de paquetería">
+      </figure>
+      <figure class="side-slide s2">
+        <img src="img/celular.jpg" alt="Contáctanos por inbox">
+      </figure>
+    </aside>
+
+    <div class="hero-content">
+      <h1 class="hero-title">Bienvenido a <span>ComPutechh</span></h1>
+      <p class="subtexto">
+        Somos una tienda virtual, dedicada a la venta de equipos de cómputo desde hace más de 25 años,
+        tenemos los mejores equipos reacondicionados, al mejor precio y la mejor calidad, contamos con amplio inventario,
+        te llevarás una grata experiencia navegando por nuestra página ya que aquí encontrarás el equipo ideal para ti o para los tuyos.
+        Nuestros equipos harán más fácil tu vida laboral o personal. Estamos comprometidos contigo, ¡Muchas gracias!  
+        Te deseamos la mejor de las experiencias visitando nuestro sitio.
+      </p>
+
+      <!-- ⬇️ MOVIDO AQUÍ: Imagen de fondo SOLO del título y subtexto -->
+      <div class="hero-image">
+        <img src="img/rack-laptops.png" alt="Rack de laptops apiladas" />
+      </div>
+      <!-- ⬆️ Queda detrás del hero-title y subtexto, no del resto -->
+    </div>
+
+    <!-- Imagen fija derecha -->
+    <figure class="hero-right-photo">
+      <img src="img/GALERIA.png" alt="Inventario de laptops">
+    </figure>
+  </section>
+
+  <!-- Promo -->
+  <section class="promo">
+    <p class="promo-text">
+      Equipos de cómputo de Gama baja, media y alta a precios increíbles !!!
+    </p>
+  </section>
+
+  <!-- Carrusel -->
+  <section class="ctc-carousel">
+    <div class="ctc-viewport">
+      <div class="ctc-track">
+        <!-- Slide 1 -->
+        <div class="ctc-slide">
+          <div class="ctc-card"><img src="img/card1.jpg" alt="Monitores"></div>
+          <div class="ctc-card"><img src="img/card2.jpg" alt="Laptops"></div>
+          <div class="ctc-card"><img src="img/card3.jpg" alt="CPU"></div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="ctc-slide">
+          <div class="ctc-card"><img src="img/card4.webp" alt="Computadora completa"></div>
+          <div class="ctc-card"><img src="img/card5.webp" alt="All in One"></div>
+          <div class="ctc-card"><img src="img/card6.webp" alt="Disco SSD"></div>
+        </div>
+        <!-- Clones -->
+        <div class="ctc-slide">
+          <div class="ctc-card"><img src="img/card1.jpg" alt="Monitores"></div>
+          <div class="ctc-card"><img src="img/card2.jpg" alt="Laptops"></div>
+          <div class="ctc-card"><img src="img/card3.jpg" alt="CPU"></div>
+        </div>
+        <div class="ctc-slide">
+          <div class="ctc-card"><img src="img/card4.webp" alt="Computadora completa"></div>
+          <div class="ctc-card"><img src="img/card5.webp" alt="All in One"></div>
+          <div class="ctc-card"><img src="img/card6.webp" alt="Disco SSD"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
