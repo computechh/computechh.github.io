@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lenovo Thinkpad E14 | Computechh</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .lightbox-container {
+      position: relative;
+      max-width: 500px;
+      margin: 50px auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .lightbox-container img {
+      width: 100%;
+      border-radius: 12px;
+    }
+    .lightbox-prev, .lightbox-next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #fff;
+      background: rgba(0,0,0,0.5);
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 6px;
+      user-select: none;
+    }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+    .thumbnails {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .thumbnails img {
+      width: 100px;
+      cursor: pointer;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      transition: transform 0.2s;
+    }
+    .thumbnails img:hover {
+      transform: scale(1.05);
+    }
+    .thumbnails img.active {
+      border-color: #00f0ff;
+    }
+    .product-gallery {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .buy-now-btn {
+      display: inline-block;
+      background-color: #25d366;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      margin-top: 25px;
+      transition: background-color 0.3s;
+    }
+    .buy-now-btn:hover {
+      background-color: #1ebe5a;
+    }
+
+    /* ===== LAYOUT GENERAL ===== */
+.product-layout {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* ===== COLUMNA IZQUIERDA ===== */
+.product-info-box {
+  margin-top: 60px;  /* Ajusta este valor a tu gusto */
+  width: 40%;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-info-box h2 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.short-desc {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.spec-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.spec-list li {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #111;
+}
+
+.price-tag {
+  font-size: 26px;
+  font-weight: bold;
+  color: #e60000;
+  margin: 15px 0;
+}
+
+  </style>
+</head>
+
+<body class="laptops-page product-page">
+
+  <!-- ===== BOTÓN REGRESAR ===== -->
+  <div class="back-bar">
+    <a class="btn-back" href="javascript:history.back()">
+      <i class="fa-solid fa-arrow-left"></i> REGRESAR
+    </a>
+  </div>
+
+  <!-- ===== PRODUCTO (DESCRIPCIÓN + GALERÍA) ===== -->
+<section class="product-layout">
+
+  <!-- ===== COLUMNA IZQUIERDA ===== -->
+  <div class="product-info-box">
+    <h2>Lenovo ThinkPad T490s</h2>
+    <p class="short-desc">Ultrabook empresarial ligera, resistente y de alto rendimiento.</p>
+
+    <ul class="spec-list">
+      <li>✔ Procesador Intel Core i7 8th Gen</li>
+      <li>✔ I7-8665U 2.11 GHZ</li>
+      <li>✔ 16GB RAM DDR4</li>
+      <li>✔ SSD 256GB NVMe</li>
+      <li>✔ Pantalla 14" Full HD</li>
+      <li>✔ Teclado iluminado</li>
+      <li>✔ Puerto Hdmi</li>
+      <li>✔ Paqueteria Office</li>      
+      <li>✔ Windows 10 Pro</li>
+    </ul>
+
+    <p class="price-tag">$4,500 MXN</p>
+
+    <a 
+      href="https://wa.me/526621838339?text=Hola,%20estoy%20interesado%20en%20la%20Lenovo%20ThinkPad%20T490s." 
+      target="_blank" 
+      class="buy-now-btn">
+      Comprar ahora
+    </a>
+  </div>
+
+  <!-- ===== COLUMNA DERECHA: GALERÍA ===== -->
+  <div class="product-gallery">
+
+    <div class="lightbox-container">
+
+      <img id="main-img" src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap1.webp" alt="Laptop Lenovo Thinkpad T490s Core I7 8th">
+
+      <a class="lightbox-prev">&#10094;</a>
+      <a class="lightbox-next">&#10095;</a>
+
+      <div class="thumbnails">
+        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap1.webp" class="active" data-index="0">
+        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap2.webp" data-index="1">
+        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap3.webp" data-index="2">
+        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap4.webp" data-index="3">
+        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap5.webp" data-index="4">
+        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap6.webp" data-index="5">
+        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap7.webp" data-index="6">
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+      
+      
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="main-footer">
+    <p>© 2025 Computechh - Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    const images = [
+      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap1.webp',
+      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap2.webp',
+      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap3.webp',
+      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap4.webp',
+      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap5.webp',
+      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap6.webp',
+      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap7.webp'
+    ];
+
+    let currentIndex = 0;
+    const mainImg = document.getElementById('main-img');
+    const prevBtn = document.querySelector('.lightbox-prev');
+    const nextBtn = document.querySelector('.lightbox-next');
+    const thumbnails = document.querySelectorAll('.thumbnails img');
+
+    function showImage(index) {
+      if (index < 0) index = images.length - 1;
+      if (index >= images.length) index = 0;
+      currentIndex = index;
+      mainImg.src = images[index];
+      thumbnails.forEach(t => t.classList.remove('active'));
+      thumbnails[index].classList.add('active');
+    }
+
+    prevBtn.addEventListener('click', () => showImage(currentIndex - 1));
+    nextBtn.addEventListener('click', () => showImage(currentIndex + 1));
+    thumbnails.forEach((thumb, i) => {
+      thumb.addEventListener('click', () => showImage(i));
+    });
+
+    // Permitir navegación con teclado
+    document.addEventListener('keydown', e => {
+      if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+      if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+    });
+  </script>
+
+</body>
+</html>
