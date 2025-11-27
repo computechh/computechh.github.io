@@ -243,10 +243,11 @@
 
 /* ===== BANNER ===== */
 .banner {
-  width: 100%;
+  max-width: 1200px; /* AJUSTA ESTE VALOR */  
   aspect-ratio: 16 / 5;
   overflow: hidden;
   position: relative;
+  margin: 0 auto;
 }
 
 .banner-slide {
@@ -256,12 +257,13 @@
 }
 
 .banner-slide img {
-  min-width: 100%;
+  width: 100%;        /* 👈 Esto fuerza a cada imagen a ocupar todo el ancho */
   height: 100%;
-  object-fit: fill;
-  flex-shrink: 0;
+  object-fit: cover;
+  flex-shrink: 0;     /* 👈 Evita que se encojan */
   object-position: center;
 }
+
 
 /* Flechas de navegación */
 .banner-prev,
@@ -317,33 +319,36 @@
 .marquee {
   width: 100%;
   overflow: hidden;
-  background: linear-gradient(90deg, #001a33, #004cff, #004cff); /* azul neón */
+  background: linear-gradient(90deg, #001a33, #004cff, #004cff);
   padding: 10px 0;
 }
 
 .marquee-track {
   display: inline-flex;
   white-space: nowrap;
-  animation: marquee-move 30s linear infinite; /* velocidad (más grande = más lento) */
+  animation: marquee-move 15s linear infinite; /* velocidad */
 }
 
+/* No deja hueco al final */
 .marquee span {
-  color: #ffffff;
+  color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  letter-spacing: 0.5px;
-  padding-right: 3rem; /* espacio entre repeticiones */
+  padding-right: 3rem; /* espacio entre frases */
 }
 
-/* Animación de derecha a izquierda */
+/* Animación contínua sin cortes */
 @keyframes marquee-move {
   0% {
     transform: translateX(0);
   }
+  
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%); /* solo la mitad porque hay doble contenido */
   }
 }
+
+
 
 .titulo-seccion {
   text-align: center;
@@ -357,6 +362,16 @@
   letter-spacing: 1px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.25);
 }
+
+
+.fondo-circuitos {
+  background-image: url("img/vision-fondo.jpg"); /* aquí pones tu fondo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+}
+
 
 
 /* ===== PRODUCTOS ===== */
@@ -716,8 +731,8 @@
 
 /* ===== FOOTER ===== */
 .main-footer {
-  background: #fff;
-  color: #111;
+  background: #0a1a2a ;
+  color: #ffffff;
   text-align: center;
   padding: 20px 0;
   

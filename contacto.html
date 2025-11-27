@@ -9,6 +9,106 @@
 </head>
 <body>
 
+  <!-- ===== TOP BAR ===== -->
+<div class="top-bar" id="topbar">
+  <div class="logo"><a href="index.html">Computechh</a></div>
+
+  <div class="search-container">
+    <button id="search-toggle" class="search-icon">
+      <i class="fas fa-search"></i>
+    </button>
+
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar productos..."id="search-inpu">
+      <button id="search-btn"><i class="fas fa-search"></i></button>
+    </div>
+  </div>
+
+  <div class="hamburger" id="menu-toggle">
+    <i class="fas fa-bars"></i>
+  </div>
+</div>
+
+<!-- ===== MENÚ DESPLEGABLE ===== -->
+<nav class="mobile-menu" id="mobile-menu">
+  <ul>
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="Ofertas.html">Ofertas</a></li>                     
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+<!-- ===== NAV BAR MODO ESCRITORIO ===== -->
+<nav class="nav-bar" id="navbar">
+  <ul class="nav-links">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="Ofertas.html">Ofertas</a></li>                     
+    <li><a href="nosotros.html">Nosotros</a></li>
+    <li><a href="contacto.html">Contacto</a></li>
+  </ul>
+</nav>
+
+
+    <!-- ===== BANNER ===== -->
+    <section class="banner">
+      <div class="banner-slide">
+        <img src="img/banner1.png" alt="Banner 1">
+        <img src="img/banner2.png" alt="Banner 2">
+        <img src="img/banner3.png" alt="Banner 3">
+      </div>
+      <a class="banner-prev">&#10094;</a>
+      <a class="banner-next">&#10095;</a>
+    </section>
+    
+
+    <!-- MARQUESINA COMPUTECHH -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Compra 100% segura | Equipate con nosotros| Envíos gratis en tu primera compra | ¡Últimas piezas! | </span>
+    <!-- 👇 Clonamos el texto para que el movimiento sea continuo -->
+    <span>Compra 100% segura | Paga menos por mas | Envíos gratis en tu primera compra | ¡Últimas piezas! | </span>
+    <span>Compra 100% segura | Equipate con nosotros| Envíos gratis en tu primera compra | ¡Últimas piezas! | </span>
+    <span>Compra 100% segura | Paga menos por mas | Envíos gratis en tu primera compra | ¡Últimas piezas! | </span>
+  </div>
+</div>
+
+
+<!-- ===== WhatsApp flotante ===== -->
+  <div class="whatsapp-float">
+  <a href="https://wa.me/526621838339?text=Hola%20Computechh,%20quiero%20información." target="_blank" rel="noopener">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</div>
+
+<!-- ===== ocultar top bar y nav bar ===== -->
+<script>
+let lastScroll = 0;
+
+window.addEventListener("scroll", () => {
+
+  const currentScroll = window.pageYOffset;
+  const topbar = document.getElementById("topbar");
+  const navbar = document.getElementById("navbar");
+
+  // Evitar errores al estar arriba del todo
+  if (currentScroll <= 0) {
+    topbar.classList.remove("hide-bar");
+    navbar.classList.remove("hide-bar");
+    lastScroll = 0;
+    return;
+  }
+
+  // Desplazamiento hacia abajo → ocultar
+  if (currentScroll > lastScroll && currentScroll > 80) {
+    topbar.classList.add("hide-bar");
+    navbar.classList.add("hide-bar");
+  }
+
+    lastScroll = currentScroll;
+});
+</script>
+
 
 <!-- ===== AVISO DE CONSTRUCCIÓN ===== -->
     <input type="checkbox" id="build-dismiss" class="uc2-dismiss" aria-hidden="true">
@@ -29,3 +129,9 @@
       <p>© 2025 Computechh - Todos los derechos reservados.</p>
     </footer>
     
+    <!-- ===== SCRIPTS ===== -->
+  <script src="script.js"></script>
+  
+
+</body>
+</html>

@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
+
+
     .lightbox-container {
       position: relative;
       max-width: 500px;
-      margin: 50px auto;
+      margin-top: -35x;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -18,6 +20,7 @@
     .lightbox-container img {
       width: 100%;
       border-radius: 12px;
+     
     }
     .lightbox-prev, .lightbox-next {
       position: absolute;
@@ -75,56 +78,136 @@
     }
 
     /* ===== LAYOUT GENERAL ===== */
-.product-layout {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  padding: 30px;
-  max-width: 1200px;
-  margin: auto;
+    .product-layout {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 30px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* ===== COLUMNA IZQUIERDA ===== */
+    /* 🔴 IMPORTANTE: ahora tiene id="infoBox" */
+    #infoBox.product-info-box {
+      margin-top: 60px;
+      width: 40%;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      position: relative;
+      display: block; /* Desktop: visible por defecto */
+    }
+
+    .product-info-box h2 {
+      font-size: 24px;
+      color: #0f172a;
+      margin-bottom: 10px;
+    }
+
+    .short-desc {
+      font-size: 15px;
+      color: #444;
+      margin-bottom: 15px;
+    }
+
+    .spec-list {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 20px;
+    }
+
+    .spec-list li {
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: #111;
+    }
+
+    .price-tag {
+      font-size: 26px;
+      font-weight: bold;
+      color: #e60000;
+      margin: 15px 0;
+    }
+
+    /* Botón para mostrar la tarjeta (solo móvil) */
+    .show-info-btn {
+      display: none; /* Desktop: oculto */
+      margin-top: 20px;
+      padding: 10px 16px;
+      background-color: #0f172a;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    /* Botón de cerrar dentro de la tarjeta flotante */
+    .close-info {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #666;
+    }
+
+    /* Desktop: no necesitamos el botón de cerrar ni el botón flotante */
+    /* ===== MODO MÓVIL ===== */
+/* ===== MODO MÓVIL ===== */
+@media (max-width: 768px) {
+
+  .product-layout {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  /* Tarjeta flotante centrada */
+  #infoBox.product-info-box {
+    display: none;  /* aparece por default */
+    position: fixed;
+    top: 15%;       /* 🔵 Más arriba */
+    left: 50%;
+    transform: translate(-50%);  /* Ya no la bajamos al centro */
+    width: 92%;
+    max-height: 90vh; /* 🔵 Mucho más alta */
+    overflow-y: auto;
+    padding: 25px;
+  }
+
+  /* Botón para abrir tarjeta */
+  .show-info-btn {
+    display: inline-block;
+    margin-top: 55px;
+    padding: 10px 16px;
+    background-color: #0f172a;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    width: fit-content;
+    align-self: center;
+  }
 }
 
-/* ===== COLUMNA IZQUIERDA ===== */
-.product-info-box {
-  margin-top: 60px;  /* Ajusta este valor a tu gusto */
-  width: 40%;
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+/* Desktop: la tarjeta normal */
+@media (min-width: 769px) {
+  #infoBox.product-info-box {
+    position: relative;
+    transform: none;
+    width: 40%;
+    display: block;
+  }
 
-.product-info-box h2 {
-  font-size: 24px;
-  color: #0f172a;
-  margin-bottom: 10px;
+  .close-info {
+    display: none; /* No hace falta en PC */
+  }
 }
-
-.short-desc {
-  font-size: 15px;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-.spec-list {
-  list-style: none;
-  padding-left: 0;
-  margin-bottom: 20px;
-}
-
-.spec-list li {
-  font-size: 15px;
-  margin-bottom: 6px;
-  color: #111;
-}
-
-.price-tag {
-  font-size: 26px;
-  font-weight: bold;
-  color: #e60000;
-  margin: 15px 0;
-}
-
   </style>
 </head>
 
@@ -138,79 +221,80 @@
   </div>
 
   <!-- ===== PRODUCTO (DESCRIPCIÓN + GALERÍA) ===== -->
-<section class="product-layout">
+  <section class="product-layout">
 
-  <!-- ===== COLUMNA IZQUIERDA ===== -->
-  <div class="product-info-box">
-    <h2>Lenovo ThinkPad T490s</h2>
-    <p class="short-desc">Ultrabook empresarial ligera, resistente y de alto rendimiento.</p>
+    <!-- ===== COLUMNA IZQUIERDA ===== -->
+    <!-- 🔴 AQUÍ AGREGUÉ id="infoBox" -->
+    <div id="infoBox" class="product-info-box">
+      <span class="close-info" onclick="closeInfo()">✕</span>
 
-    <ul class="spec-list">
-      <li>✔ Procesador Intel Core i7 8th Gen</li>
-      <li>✔ I7-8665U 2.11 GHZ</li>
-      <li>✔ 16GB RAM DDR4</li>
-      <li>✔ SSD 256GB NVMe</li>
-      <li>✔ Pantalla 14" Full HD</li>
-      <li>✔ Teclado iluminado</li>
-      <li>✔ Puerto Hdmi</li>
-      <li>✔ Paqueteria Office</li>      
-      <li>✔ Windows 10 Pro</li>
-    </ul>
+      <h2>Lenovo ThinkPad T490s</h2>
+      <p class="short-desc">Ultrabook empresarial ligera, resistente y de alto rendimiento.</p>
 
-    <p class="price-tag">$4,500 MXN</p>
+      <ul class="spec-list">
+        <li>✔ Procesador Intel Core i7 8th Gen</li>
+        <li>✔ I7-8665U 2.11 GHZ</li>
+        <li>✔ 16GB RAM DDR4</li>
+        <li>✔ SSD 256GB NVMe</li>
+        <li>✔ Pantalla 14" Full HD</li>
+        <li>✔ Teclado iluminado</li>
+        <li>✔ Puerto Hdmi</li>
+        <li>✔ Paqueteria Office</li>
+        <li>✔ Windows 10 Pro</li>
+      </ul>
 
-    <a 
-      href="https://wa.me/526621838339?text=Hola,%20estoy%20interesado%20en%20la%20Lenovo%20ThinkPad%20T490s." 
-      target="_blank" 
-      class="buy-now-btn">
-      Comprar ahora
-    </a>
-  </div>
+      <p class="price-tag">$4,500 MXN</p>
 
-  <!-- ===== COLUMNA DERECHA: GALERÍA ===== -->
-  <div class="product-gallery">
-
-    <div class="lightbox-container">
-
-      <img id="main-img" src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap1.webp" alt="Laptop Lenovo Thinkpad T490s Core I7 8th">
-
-      <a class="lightbox-prev">&#10094;</a>
-      <a class="lightbox-next">&#10095;</a>
-
-      <div class="thumbnails">
-        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap1.webp" class="active" data-index="0">
-        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap2.webp" data-index="1">
-        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap3.webp" data-index="2">
-        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap4.webp" data-index="3">
-        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap5.webp" data-index="4">
-        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap6.webp" data-index="5">
-        <img src="laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap7.webp" data-index="6">
-      </div>
-
+      <a 
+        href="https://wa.me/526621838339?text=Hola,%20estoy%20interesado%20en%20la%20Lenovo%20ThinkPad%20T490s." 
+        target="_blank" 
+        class="buy-now-btn">
+        Comprar ahora
+      </a>
     </div>
 
-  </div>
+    <!-- ===== Botón para abrir la tarjeta en móvil ===== -->
+    <a class="show-info-btn" onclick="openInfo()">Ver detalles del equipo</a>
 
-</section>
+    <!-- ===== COLUMNA DERECHA: GALERÍA ===== -->
+    <div class="product-gallery">
+      <div class="lightbox-container">
+        <img id="main-img" src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap1.webp" alt="Laptop Dell Latitude 7480 Core I7 7th">
 
-      
-      
+        <a class="lightbox-prev">&#10094;</a>
+        <a class="lightbox-next">&#10095;</a>
+
+        <div class="thumbnails">
+          <img src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap1.webp" class="active" data-index="0">
+          <img src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap2.webp" data-index="1">
+          <img src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap3.webp" data-index="2">
+          <img src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap4.webp" data-index="3">
+          <img src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap5.webp" data-index="4">
+          <img src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap6.webp" data-index="5">
+          <img src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap7.webp" data-index="6">
+          <img src="laptop/Laptop Dell Latitude 7480 Core I7 7th/lap8.webp" data-index="7">
+        </div>
+      </div>
+    </div>
+
+  </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="main-footer">
     <p>© 2025 Computechh - Todos los derechos reservados.</p>
   </footer>
 
-  <!-- ===== SCRIPT ===== -->
+  <!-- ===== SCRIPT GALERÍA ===== -->
   <script>
     const images = [
-      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap1.webp',
-      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap2.webp',
-      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap3.webp',
-      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap4.webp',
-      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap5.webp',
-      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap6.webp',
-      'laptop/Laptop Lenovo Thinkpad T490s Core I7 8th/lap7.webp'
+      'laptop/Laptop Dell Latitude 7480 Core I7 7th/lap1.webp',
+      'laptop/Laptop Dell Latitude 7480 Core I7 7th/lap2.webp',
+      'laptop/Laptop Dell Latitude 7480 Core I7 7th/lap3.webp',
+      'laptop/Laptop Dell Latitude 7480 Core I7 7th/lap4.webp',
+      'laptop/Laptop Dell Latitude 7480 Core I7 7th/lap5.webp',
+      'laptop/Laptop Dell Latitude 7480 Core I7 7th/lap6.webp',
+      'laptop/Laptop Dell Latitude 7480 Core I7 7th/lap7.webp',
+      'laptop/Laptop Dell Latitude 7480 Core I7 7th/lap8.webp'
     ];
 
     let currentIndex = 0;
@@ -239,6 +323,23 @@
       if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
       if (e.key === 'ArrowRight') showImage(currentIndex + 1);
     });
+  </script>
+
+  <!-- ===== SCRIPT TARJETA FLOTANTE ===== -->
+  <script>
+    function openInfo() {
+      const box = document.getElementById("infoBox");
+      if (box) {
+        box.style.display = "block";
+      }
+    }
+
+    function closeInfo() {
+      const box = document.getElementById("infoBox");
+      if (box) {
+        box.style.display = "none";
+      }
+    }
   </script>
 
 </body>
