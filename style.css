@@ -911,42 +911,7 @@
   height: auto;
   display: block;
 
-  TABLET (601px a 1024px)
-   Ajuste específico para iPads y tablets
-   ========================================= */
-@media (min-width: 601px) and (max-width: 1024px){
-
-  /* Contenedor principal aprovecha el ancho */
-  .contenedor-productos{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    padding: 15px;
-  }
-
-  /* Las tarjetas ya no quedan angostas */
-  .producto,
-  .nuevo-card{
-    width: 100%;
-    max-width: 100%;
-  }
-
-  /* Imágenes más equilibradas */
-  .producto img,
-  .nuevo-card img{
-    width: 100%;
-    height: auto;
-  }
-
-  /* Títulos ligeramente más chicos que desktop */
-  h1{
-    font-size: 1.6rem;
-  }
-
-}
   
-}
-
 @media (max-width: 768px) {
   .nosotros-foto {
     width: 100% !important;   /* Ocupa todo el ancho */
