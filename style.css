@@ -978,6 +978,33 @@
   }
 }
 
+  /* =========================================
+   TABLET – PÁGINA DE PRODUCTO
+   Ajusta layout cuando hay menos ancho
+   ========================================= */
+@media (min-width: 601px) and (max-width: 1024px){
+
+  .product-layout{
+    flex-direction: column !important;
+    align-items: center;
+    gap: 20px;
+  }
+
+  /* Tarjeta de información */
+  .product-layout .info,
+  .product-layout .product-info{
+    width: 90% !important;
+    max-width: 600px;
+  }
+
+  /* Galería de imágenes */
+  .product-layout .gallery,
+  .product-layout .product-gallery{
+    width: 100% !important;
+  }
+
+}
+
 
  /* seccion nosotros */
 
