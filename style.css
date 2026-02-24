@@ -910,7 +910,7 @@
   max-width: 1400px; /* evita que se haga demasiado grande */
   height: auto;
   display: block;
-
+  }
   
 @media (max-width: 768px) {
   .nosotros-foto {
@@ -1001,6 +1001,23 @@
   .product-layout .gallery,
   .product-layout .product-gallery{
     width: 100% !important;
+  }
+
+}
+
+/* =========================================
+   TABLET REAL (iPads / tablets grandes)
+   ========================================= */
+@media (min-width: 601px) and (max-width: 1024px){
+
+  .product-gallery{
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+
+  .nuevo-card{
+    width: 100%;
+    max-width: 100%;
   }
 
 }
