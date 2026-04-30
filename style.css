@@ -340,11 +340,10 @@
 /* Animación contínua sin cortes */
 @keyframes marquee-move {
   0% {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
-  
   100% {
-    transform: translateX(-50%); /* solo la mitad porque hay doble contenido */
+    transform: translateX(0);
   }
 }
 
