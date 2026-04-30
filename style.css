@@ -1154,6 +1154,52 @@ body.no-scroll {
   width: 100%;
 }
 
+/* ===== MODAL ===== */
+.zoom-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  justify-content: center;
+  align-items: center;
+}
+
+.zoom-content {
+  max-width: 95%;
+  max-height: 85%;
+  border-radius: 12px;
+}
+
+/* cerrar */
+.zoom-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 35px;
+  color: white;
+  cursor: pointer;
+}
+
+/* flechas */
+.zoom-prev, .zoom-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 30px;
+  color: white;
+  background: rgba(255,255,255,0.2);
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.zoom-prev { left: 15px; }
+.zoom-next { right: 15px; }
+
 
  
 
