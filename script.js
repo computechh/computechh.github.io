@@ -89,19 +89,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (busqueda && cards.length > 0) {
 
-    const q = busqueda.toLowerCase().trim();
+    const palabras = busqueda.toLowerCase().trim().split(" ");
 
-    
+cards.forEach(card => {
+  const text = card.innerText.toLowerCase();
 
-    // Filtrar tarjetas
-    cards.forEach(card => {
-      const text = card.innerText.toLowerCase();
-      if (text.includes(q)) {
-        card.style.display = "flex";
-      } else {
-        card.style.display = "none";
-      }
-    });
+  const coincide = palabras.every(palabra => text.includes(palabra));
+
+  if (coincide) {
+    card.style.display = "flex";
+  } else {
+    card.style.display = "none";
+  }
+});
 
     // Bajar a la sección de resultados
     const resultados = document.getElementById("resultados");
