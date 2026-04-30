@@ -103,6 +103,23 @@ cards.forEach(card => {
   }
 });
 
+// 🔥 en busqueda ocultar SOLO títulos Laptops, Comp Escrit, All in One (no secciones)
+const titulos = document.querySelectorAll("h2");
+
+titulos.forEach(t => {
+  t.style.display = "none";
+});
+
+// 🔥 en busqueda ocultar imagen negocio y texto
+// 🔥 ocultar secciones adicionales (imagen + texto)
+const secciones = document.querySelectorAll(".ocultar-en-busqueda");
+
+secciones.forEach(sec => {
+  sec.style.display = "none";
+}); 
+
+
+
     // Bajar a la sección de resultados
     const resultados = document.getElementById("resultados");
     if (resultados) {
