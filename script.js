@@ -191,3 +191,24 @@ window.addEventListener("resize", () => {
   bannerSlide.style.transform = `translateX(-${size * index}px)`;
 });
 
+/* negocio animacion al aparecer */
+const elementos = document.querySelectorAll('.fade-in');
+
+function mostrarElemento() {
+  const trigger = window.innerHeight * 0.85;
+
+  elementos.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+
+    if (top < trigger) {
+      el.classList.add('show');
+    }
+  });
+}
+
+window.addEventListener('scroll', mostrarElemento);
+window.addEventListener('load', mostrarElemento);
+
+
+
+
