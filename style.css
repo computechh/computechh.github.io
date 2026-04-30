@@ -326,7 +326,7 @@
 .marquee-track {
   display: inline-flex;
   white-space: nowrap;
-  animation: marquee-move 15s linear infinite; /* velocidad */
+  animation: marquee-move 35s linear infinite; /* velocidad */
 }
 
 /* No deja hueco al final */
