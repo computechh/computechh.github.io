@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 cards.forEach(card => {
   const text = card.innerText.toLowerCase();
 
-  const coincide = palabras.every(palabra => text.includes(palabra));
+  const coincide = palabras.some(palabra => text.includes(palabra));
 
   if (coincide) {
     card.style.display = "flex";
