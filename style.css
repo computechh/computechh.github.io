@@ -646,30 +646,29 @@
     display: none; /* Oculto por defecto */
   }
 
-  /* Botón para abrir tarjeta (opcional) */
+  /* Botón para abrir tarjeta */
   .show-info-btn {
-    display: inline-block;
-    margin: 0 auto 14px;
-    background: #0066BB;
-    color: white;
-    padding: 10px 14px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 14px;
-  }
-
-  /* Botón cerrar */
-  .close-info {
-    position: absolute;
-    top: 6px;
-    right: 10px;
-    font-size: 22px;
-    font-weight: bold;
-    color: #444;
-    cursor: pointer;
-  }
+    display: block;
+  width: 90%;
+  max-width: 300px;
+  margin: 20px auto;
+  padding: 14px;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.btn-detalles:active {
+  transform: scale(0.95);
+}
+  }
+
+  
 
 
 /* ===== Sección Promocional con ícono animado ===== */
@@ -1131,6 +1130,21 @@
     max-width: 100% !important;
   }
 
+}
+
+/* 👉 manita fuera del botón */
+.show-info-btn {
+  position: relative;
+  display: inline-block; /* importante para posicionar bien */
+}
+
+.show-info-btn::after {
+  content: "👉";
+  position: absolute;
+  left: -40px;   /* 👉 la mueve hacia afuera */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
 }
 
 

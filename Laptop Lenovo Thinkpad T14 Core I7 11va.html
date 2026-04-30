@@ -226,7 +226,6 @@
     <!-- ===== COLUMNA IZQUIERDA ===== -->
     <!-- 🔴 AQUÍ AGREGUÉ id="infoBox" -->
     <div id="infoBox" class="product-info-box">
-      <span class="close-info" onclick="closeInfo()">✕</span>
 
       <h2>Lenovo ThinkPad T14</h2>
       <p class="short-desc">Laptop empresarial potente, lista para trabajar desde el primer momento.</p>
@@ -334,22 +333,32 @@
     });
   </script>
 
-  <!-- ===== SCRIPT TARJETA FLOTANTE ===== -->
+  !-- ===== SCRIPT CERRAR TARJETA FLOTANTE ===== -->
   <script>
-    function openInfo() {
-      const box = document.getElementById("infoBox");
-      if (box) {
-        box.style.display = "block";
-      }
-    }
+const box = document.getElementById("infoBox");
+const btn = document.querySelector(".show-info-btn");
 
-    function closeInfo() {
-      const box = document.getElementById("infoBox");
-      if (box) {
-        box.style.display = "none";
-      }
-    }
-  </script>
+// 🔁 abrir / cerrar con el mismo botón
+btn.addEventListener("click", (e) => {
+  e.stopPropagation();
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+});
+
+// 👉 cerrar al hacer clic fuera
+document.addEventListener("click", () => {
+  box.style.display = "none";
+});
+
+// 👉 evitar que se cierre si haces clic dentro
+box.addEventListener("click", (e) => {
+  e.stopPropagation();
+});
+</script>
 
 </body>
 </html>
