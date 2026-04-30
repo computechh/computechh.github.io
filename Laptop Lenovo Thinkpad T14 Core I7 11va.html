@@ -363,5 +363,77 @@ box.addEventListener("click", (e) => {
 });
 </script>
 
+<!-- ===== MODAL ZOOM ===== -->
+<div id="zoomModal" class="zoom-modal">
+  <span class="zoom-close">&times;</span>
+
+  <img id="zoomImg" class="zoom-content">
+
+  <a class="zoom-prev">&#10094;</a>
+  <a class="zoom-next">&#10095;</a>
+</div>
+
+<script>
+const modal = document.getElementById("zoomModal");
+const zoomImg = document.getElementById("zoomImg");
+
+// 👉 usamos currentIndex EXISTENTE (NO creamos otro)
+
+// abrir
+document.getElementById("main-img").addEventListener("click", () => {
+  modal.style.display = "flex";
+  zoomImg.src = images[currentIndex];
+});
+
+// cerrar
+document.querySelector(".zoom-close").onclick = () => {
+  modal.style.display = "none";
+};
+
+// siguiente
+document.querySelector(".zoom-next").onclick = () => {
+  currentIndex = (currentIndex + 1) % images.length;
+  zoomImg.src = images[currentIndex];
+};
+
+// anterior
+document.querySelector(".zoom-prev").onclick = () => {
+  currentIndex = (currentIndex - 1 + images.length) % images.length;
+  zoomImg.src = images[currentIndex];
+};
+
+// teclado
+document.addEventListener("keydown", e => {
+  if (modal.style.display === "flex") {
+    if (e.key === "ArrowRight") currentIndex++;
+    if (e.key === "ArrowLeft") currentIndex--;
+
+    if (currentIndex < 0) currentIndex = images.length - 1;
+    if (currentIndex >= images.length) currentIndex = 0;
+
+    zoomImg.src = images[currentIndex];
+  }
+});
+
+// swipe
+let startX = 0;
+
+zoomImg.addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
+
+zoomImg.addEventListener("touchend", e => {
+  let endX = e.changedTouches[0].clientX;
+
+  if (startX - endX > 50) {
+    currentIndex = (currentIndex + 1) % images.length;
+  } else if (endX - startX > 50) {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+  }
+
+  zoomImg.src = images[currentIndex];
+});
+</script>
+
 </body>
 </html>
