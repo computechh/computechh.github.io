@@ -319,24 +319,30 @@
     });
   </script>
 
-  <script>
+
+
+<!-- ===== SCRIPT CERRAR TARJETA FLOTANTE ===== -->
+<script>
 const box = document.getElementById("infoBox");
 const btn = document.querySelector(".show-info-btn");
 
-// 🔁 abrir / cerrar con el mismo botón
+// 🔁 abrir / cerrar correctamente
 btn.addEventListener("click", (e) => {
   e.stopPropagation();
 
   if (box.style.display === "block") {
     box.style.display = "none";
+    document.body.classList.remove("no-scroll");
   } else {
     box.style.display = "block";
+    document.body.classList.add("no-scroll");
   }
 });
 
 // 👉 cerrar al hacer clic fuera
 document.addEventListener("click", () => {
   box.style.display = "none";
+  document.body.classList.remove("no-scroll");
 });
 
 // 👉 evitar que se cierre si haces clic dentro

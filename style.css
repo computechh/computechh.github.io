@@ -1147,8 +1147,15 @@
   font-size: 22px;
 }
 
+/* 🚫 bloquear scroll del fondo */
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
 
- /* seccion nosotros */
+
+ 
 
 
 
