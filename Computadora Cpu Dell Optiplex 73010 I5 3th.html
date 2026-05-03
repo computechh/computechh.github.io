@@ -216,12 +216,32 @@
   <!-- ===== BOTÓN REGRESAR ===== -->
   <div class="back-bar">
     <a class="btn-back" href="javascript:history.back()">
-      <i class="fa-solid fa-arrow-left"></i> REGRESAR
+      <i class="fa-solid fa-arrow-left"></i>
     </a>
   </div>
 
   <!-- ===== PRODUCTO (DESCRIPCIÓN + GALERÍA) ===== -->
   <section class="product-layout">
+
+    <!-- ===== Botón para abrir la tarjeta en móvil ===== -->
+    <a class="show-info-btn" onclick="openInfo()">Ver detalles del equipo</a>
+
+    <!-- ===== COLUMNA DERECHA: GALERÍA ===== -->
+    <div class="product-gallery">
+      <div class="lightbox-container">
+        <img id="main-img" src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp1.webp" alt="Computadora Dell Inspiron 3668 I3 7th">
+
+        <a class="lightbox-prev">&#10094;</a>
+        <a class="lightbox-next">&#10095;</a>
+
+        <div class="thumbnails">
+          <img src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp1.webp" class="active" data-index="0">
+          <img src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp2.webp" data-index="1"> 
+          <img src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp3.webp" data-index="1">   
+          <img src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp4.webp" data-index="1">                       
+        </div>
+      </div>
+    </div>
 
     <!-- ===== COLUMNA IZQUIERDA ===== -->
     <!-- 🔴 AQUÍ AGREGUÉ id="infoBox" -->
@@ -253,32 +273,11 @@
       </a>
     </div>
 
-    <!-- ===== Botón para abrir la tarjeta en móvil ===== -->
-    <a class="show-info-btn" onclick="openInfo()">Ver detalles del equipo</a>
-
-    <!-- ===== COLUMNA DERECHA: GALERÍA ===== -->
-    <div class="product-gallery">
-      <div class="lightbox-container">
-        <img id="main-img" src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp1.webp" alt="Computadora Dell Inspiron 3668 I3 7th">
-
-        <a class="lightbox-prev">&#10094;</a>
-        <a class="lightbox-next">&#10095;</a>
-
-        <div class="thumbnails">
-          <img src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp1.webp" class="active" data-index="0">
-          <img src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp2.webp" data-index="1"> 
-          <img src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp3.webp" data-index="1">   
-          <img src="escritorio/Computadora Cpu Dell Optiplex 73010 I5 3th/comp4.webp" data-index="1">                       
-        </div>
-      </div>
-    </div>
+      
 
   </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="main-footer">
-    <p>© 2025 Computechh - Todos los derechos reservados.</p>
-  </footer>
+ 
 
   <!-- ===== SCRIPT GALERÍA ===== -->
   <script>
@@ -335,6 +334,10 @@ btn.addEventListener("click", (e) => {
   }
 });
 
+document.querySelector(".zoom-close").onclick = () => {
+  modal.style.display = "none";
+};
+
 // 👉 cerrar al hacer clic fuera
 document.addEventListener("click", () => {
   box.style.display = "none";
@@ -361,6 +364,14 @@ box.addEventListener("click", (e) => {
 const modal = document.getElementById("zoomModal");
 const zoomImg = document.getElementById("zoomImg");
 
+// 👉 cerrar zoom al hacer click fuera de la imagen
+modal.addEventListener("click", (e) => {
+
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+
+});
 // 👉 usamos currentIndex EXISTENTE (NO creamos otro)
 
 // abrir
@@ -369,9 +380,15 @@ document.getElementById("main-img").addEventListener("click", () => {
   zoomImg.src = images[currentIndex];
 });
 
-// cerrar
+// cuando hacemoz zoom a la imagen y regresamos a vista normal la descripcion no desaparece
 document.querySelector(".zoom-close").onclick = () => {
   modal.style.display = "none";
+
+  // 🔥 RESTAURAR INFO
+  const box = document.getElementById("infoBox");
+
+  
+  
 };
 
 // siguiente
@@ -418,6 +435,11 @@ zoomImg.addEventListener("touchend", e => {
   zoomImg.src = images[currentIndex];
 });
 </script>
+
+<!-- ===== FOOTER ===== -->
+  <footer class="main-footer">
+    <p>© 2025 Computechh - Todos los derechos reservados.</p>
+  </footer>
 
 </body>
 </html>
