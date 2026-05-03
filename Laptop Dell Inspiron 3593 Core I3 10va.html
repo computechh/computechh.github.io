@@ -216,79 +216,79 @@
   <!-- ===== BOTÓN REGRESAR ===== -->
   <div class="back-bar">
     <a class="btn-back" href="javascript:history.back()">
-      <i class="fa-solid fa-arrow-left"></i> REGRESAR
-    </a>
+  <i class="fa-solid fa-arrow-left"></i> 
+</a>
   </div>
 
   <!-- ===== PRODUCTO (DESCRIPCIÓN + GALERÍA) ===== -->
-  <section class="product-layout">
+<section class="product-layout">
 
-    <!-- ===== COLUMNA IZQUIERDA ===== -->
-    <!-- 🔴 AQUÍ AGREGUÉ id="infoBox" -->
-    <div id="infoBox" class="product-info-box">
+  <!-- ===== BOTÓN MÓVIL ===== -->
+  <a class="show-info-btn" onclick="openInfo()">Ver detalles del equipo</a>
 
-      <h2>Laptop Dell Inspiron 3593 Core I3 10va</h2>
-      <p class="short-desc">Laptop confiable, rápida y perfecta para trabajo diario, escuela o uso personal.</p>
+  <!-- ===== COLUMNA IZQUIERDA: GALERÍA ===== -->
+  <div class="product-gallery">
+    <div class="lightbox-container">
+      <img id="main-img" src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap1.webp" alt="Laptop Dell Inspiron 3593 Core I3 10va">
 
-      <<ul class="spec-list">
-  <li>✔ Modelo: Dell Inspiron 3593</li>
-  <li>✔ Procesador: Intel Core i3-1005G1 (10ma generación)</li>
-  <li>✔ Velocidad: hasta 3.4 GHz</li>
-  <li>✔ Memoria RAM: 8 GB</li>
-  <li>✔ Almacenamiento: SSD + HDD 1TB</li>
-  <li>✔ Sistema Operativo: Windows 11 Home 64 bits</li>
-  <li>✔ Gráficos: Intel UHD Graphics</li>
-  <li>✔ Pantalla: 15.6 pulgadas TOUCH</li>
-  <li>✔ Resolución: HD / Full HD</li>
-  <li>✔ Webcam integrada</li>
-  <li>✔ USB 3.0 / USB 2.0 / HDMI</li>
-  <li>✔ Lector SD</li>
-  <li>✔ Entrada audífonos y micrófono</li>
-  <li>✔ WiFi y Bluetooth</li>
-  <li>✔ Incluye Office 2024</li>
-  <li>✔ Antivirus Windows Defender</li>
-  <li>✔ Batería en excelente estado (uso diario)</li>
-  <li>✔ Incluye cargador original Dell</li>
-</ul>
+      <a class="lightbox-prev">&#10094;</a>
+      <a class="lightbox-next">&#10095;</a>
 
-<p class="price-tag">$3,800 MXN</p>
-
-      <a 
-        href="https://wa.me/526621838339?text=Hola,%20estoy%20interesado%20en%20Laptop Dell Inspiron 3593 Core I3 10va." 
-        target="_blank" 
-        class="buy-now-btn">
-        Comprar ahora
-      </a>
-    </div>
-
-    <!-- ===== Botón para abrir la tarjeta en móvil ===== -->
-    <a class="show-info-btn" onclick="openInfo()">Ver detalles del equipo</a>
-
-    <!-- ===== COLUMNA DERECHA: GALERÍA ===== -->
-    <div class="product-gallery">
-      <div class="lightbox-container">
-        <img id="main-img" src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap1.webp" alt="Laptop Dell Inspiron 3593 Core I3 10va">
-
-        <a class="lightbox-prev">&#10094;</a>
-        <a class="lightbox-next">&#10095;</a>
-
-        <div class="thumbnails">
-          <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap1.webp" class="active" data-index="0">
-          <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap2.webp" data-index="1">
-          <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap3.webp" data-index="2">
-          <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap4.webp" data-index="3">
-          <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap5.webp" data-index="4">                             
-          <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap6.webp" data-index="5">
-        </div>
+      <div class="thumbnails">
+        <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap1.webp" class="active" data-index="0">
+        <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap2.webp" data-index="1">
+        <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap3.webp" data-index="2">
+        <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap4.webp" data-index="3">
+        <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap5.webp" data-index="4">                             
+        <img src="laptop/Laptop Dell Inspiron 3593 Core I3 10va/lap6.webp" data-index="5">
       </div>
     </div>
+  </div>
 
-  </section>
+  
+  <!-- ===== COLUMNA DERECHA ===== -->
+  <div id="infoBox" class="product-info-box">
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="main-footer">
-    <p>© 2025 Computechh - Todos los derechos reservados.</p>
-  </footer>
+    <h2>Laptop Dell Inspiron 3593 Core I3 10va</h2>
+    <p class="short-desc">Laptop confiable, rápida y perfecta para trabajo diario, escuela o uso personal.</p>
+
+    <!-- 🔥 CORREGIDO (quité <<) -->
+    <ul class="spec-list">
+      <li>✔ Modelo: Dell Inspiron 3593</li>
+      <li>✔ Procesador: Intel Core i3-1005G1 (10ma generación)</li>
+      <li>✔ Velocidad: hasta 3.4 GHz</li>
+      <li>✔ Memoria RAM: 8 GB</li>
+      <li>✔ Almacenamiento: SSD + HDD 1TB</li>
+      <li>✔ Sistema Operativo: Windows 11 Home 64 bits</li>
+      <li>✔ Gráficos: Intel UHD Graphics</li>
+      <li>✔ Pantalla: 15.6 pulgadas TOUCH</li>
+      <li>✔ Resolución: HD / Full HD</li>
+      <li>✔ Webcam integrada</li>
+      <li>✔ USB 3.0 / USB 2.0 / HDMI</li>
+      <li>✔ Lector SD</li>
+      <li>✔ Entrada audífonos y micrófono</li>
+      <li>✔ WiFi y Bluetooth</li>
+      <li>✔ Incluye Office 2024</li>
+      <li>✔ Antivirus Windows Defender</li>
+      <li>✔ Batería en excelente estado (uso diario)</li>
+      <li>✔ Incluye cargador original Dell</li>
+    </ul>
+
+    <p class="price-tag">$3,800 MXN</p>
+
+    <a 
+      href="https://wa.me/526621838339?text=Hola,%20estoy%20interesado%20en%20Laptop Dell Inspiron 3593 Core I3 10va." 
+      target="_blank" 
+      class="buy-now-btn">
+      Comprar ahora
+    </a>
+
+  </div>
+
+  
+</section>
+
+  
 
   <!-- ===== SCRIPT GALERÍA ===== -->
   <script>
@@ -347,6 +347,10 @@ btn.addEventListener("click", (e) => {
   }
 });
 
+document.querySelector(".zoom-close").onclick = () => {
+  modal.style.display = "none";
+};
+
 // 👉 cerrar al hacer clic fuera
 document.addEventListener("click", () => {
   box.style.display = "none";
@@ -373,6 +377,14 @@ box.addEventListener("click", (e) => {
 const modal = document.getElementById("zoomModal");
 const zoomImg = document.getElementById("zoomImg");
 
+// 👉 cerrar zoom al hacer click fuera de la imagen
+modal.addEventListener("click", (e) => {
+
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+
+});
 // 👉 usamos currentIndex EXISTENTE (NO creamos otro)
 
 // abrir
@@ -381,9 +393,15 @@ document.getElementById("main-img").addEventListener("click", () => {
   zoomImg.src = images[currentIndex];
 });
 
-// cerrar
+// cuando hacemoz zoom a la imagen y regresamos a vista normal la descripcion no desaparece
 document.querySelector(".zoom-close").onclick = () => {
   modal.style.display = "none";
+
+  // 🔥 RESTAURAR INFO
+  const box = document.getElementById("infoBox");
+
+  
+  
 };
 
 // siguiente
@@ -430,6 +448,11 @@ zoomImg.addEventListener("touchend", e => {
   zoomImg.src = images[currentIndex];
 });
 </script>
+
+<!-- ===== FOOTER ===== -->
+  <footer class="main-footer">
+    <p>© 2025 Computechh - Todos los derechos reservados.</p>
+  </footer>
 
 </body>
 </html>

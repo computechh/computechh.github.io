@@ -378,21 +378,6 @@
   display: block;
 }
 
-/* Texto */
-.about-text {
-  flex: 1;
-}
-
-.about-text h2 {
-  margin-bottom: 15px;
-  font-size: 28px;
-}
-
-.about-text p {
-  margin-bottom: 10px;
-  line-height: 1.6;
-}
-
 
 /* responsive negocio */
 @media (max-width: 768px) {
@@ -405,10 +390,21 @@
 /* fondo degradado del texto negocio */
 .about-text {
   flex: 1;
-  background: linear-gradient(135deg, #0f2a44, #1f4f82);
+  
   color: #fff;
   padding: 30px;
   border-radius: 12px;
+
+background:
+    radial-gradient(circle at 20% 50%, rgba(0,150,255,0.15), transparent),
+    linear-gradient(135deg, #020617, #0a2540, #001a33);
+
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+
 }
 
 /* Título */
@@ -442,18 +438,88 @@
 
 
 
+/* ===== TITULO PRO CON SVG ===== */
 .titulo-seccion {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 35px 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
   text-align: center;
-  font-size: 1.9rem;
-  font-weight: 700;
   color: white;
-  padding: 50px 0;
-  margin: 35px 0 20px;
-  background: linear-gradient(135deg, #0f172a, #1e293b);
-  border-radius: 8px;
-  letter-spacing: 1px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+
+  background:
+    radial-gradient(circle at 20% 50%, rgba(0,150,255,0.15), transparent),
+    linear-gradient(135deg, #020617, #0a2540, #001a33);
+
+  border-radius: 14px;
+  position: relative;
+  overflow: hidden;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
 }
+
+/* icono */
+.icono-cat {
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.8;
+  color: #00c6ff;
+}
+
+/* texto */
+.titulo-seccion span {
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+/* línea */
+.titulo-seccion::after {
+  content: "";
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #00c6ff, transparent);
+}
+
+/* móvil */
+@media (max-width: 768px) {
+  .titulo-seccion span {
+    font-size: 24px;
+  }
+
+  .icono-cat {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ✨ RAYITOS */
+.titulo-seccion::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+
+  background: linear-gradient(
+    70deg,
+    transparent 33%,
+    rgba(0, 198, 255, 0.15),
+    transparent 33%
+  );
+
+  transform: rotate(25deg);
+  pointer-events: none;
+}
+
+
 
 
 .fondo-circuitos {
@@ -972,14 +1038,25 @@
 }
 
 .btn-back {
-  display: inline-block;
-  background: #00f0ff;
-  color: #0f172a;
-  padding: 10px 18px;
-  border-radius: 10px;
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  color: white;
+
   text-decoration: none;
-  transition: .25s;
+
+  background: transparent; /* ❌ quitamos fondo */
+  border: none;
+  box-shadow: none;
+
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn-back:hover {
+  opacity: 0.7;
 }
 /* ===== FIN DE LA BARRA SUPERIOR PARA LA PAGINA DE GALERIA===== */
 
@@ -1206,7 +1283,7 @@ body.no-scroll {
   display: flex;
   justify-content: center;
   gap: 10px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap; /* 🔥 importante */
 }
 
 /* ===== MODO MÓVIL ===== */
