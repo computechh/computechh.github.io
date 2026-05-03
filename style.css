@@ -675,6 +675,8 @@ background:
 @media (max-width: 600px) {
   .product-gallery {
     grid-template-columns: 1fr !important;
+    margin-top: 0 !important;
+  padding-top: 0 !important;
   }
 
   .nuevo-card {
@@ -717,7 +719,7 @@ background:
     display: block;
   width: 90%;
   max-width: 300px;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 14px;
   background: linear-gradient(135deg, #00c6ff, #0072ff);
   color: white;
