@@ -895,6 +895,17 @@ background:
   
 }
 
+/* ===== FIX FOOTER ABAJO ===== */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-footer {
+  margin-top: auto;
+}
+
 /* ===== WHATSAPP ===== */
 /* CONTENEDOR */
 .whatsapp-float {
