@@ -895,7 +895,7 @@ background:
   
 }
 
-/* ===== FIX FOOTER ABAJO ===== */
+/* ===== FIX FOOTER ABAJO PARA QUE NOSE MUEVA ===== */
 body {
   min-height: 100vh;
   display: flex;
@@ -1327,6 +1327,21 @@ body.no-scroll {
 
 .thumbnails img.active {
   border: 2px solid #00c6ff;
+}
+
+/* ===== IMAGEN PRINCIPAL PRODUCTO ===== */
+#main-img {
+  width: 100%;
+  height: 380px; /* 🔥 ajusta este valor si quieres más grande */
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* 📱 móvil más grande */
+@media (max-width: 768px) {
+  #main-img {
+    height: 280px;
+  }
 }
 
  
