@@ -349,10 +349,10 @@
 /* Animación contínua sin cortes */
 @keyframes marquee-move {
   0% {
-    transform: translateX(-50%);
+    transform: translateX(100%);
   }
   100% {
-    transform: translateX(0);
+    transform: translateX(-100%);
   }
 }
 
@@ -538,14 +538,14 @@ background:
   width: 260px;
   background: #ffffff;
   border-radius: 10px;
-  padding: 15px;
+  padding: 20px;
   text-align: center;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
   
   /* FORMA VERTICAL EN ESCRITORIO */
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 15px;
   align-items: center;
 }
 
@@ -582,13 +582,12 @@ background:
   min-height: 40px;
 }
 
-/* Imagen del producto */
-.card-img,
 .nuevo-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 5px auto; /* 🔥 menos espacio */
 }
 
 /* Precio en rojo */
@@ -613,61 +612,76 @@ background:
 
   .nuevo-card {
     display: grid;
-    grid-template-columns: 110px 1fr; /* imagen - info */
-    gap: 10px;
-    align-items: start;
+    grid-template-columns: 110px 1fr;
+    gap: 12px;
     padding: 12px;
+    align-items: center;
   }
 
-  /* Imagen izquierda */
-  .card-img {
-    width: 110px;
-    height: 110px;
-    object-fit: cover;
-    border-radius: 8px;
+  /* IMAGEN */
+  .nuevo-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
   }
 
-  /* Columna derecha */
+  /* CONTENIDO DERECHO */
   .card-info {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    margin-left: 35px;   /* SEPARA DEL BORDE IZQUIERDO */
-    width: 60%;          /* evita que se empalme con la imagen */
+    gap: 6px;
+    margin: 0;
+    width: 100%;
   }
 
-  /* Botón compacto solo en móvil */
-  .btn-whatsapp-top {
-    font-size: 12px !important;
-    padding: 5px 8px !important;
-    width: fit-content;
+  /* BOTÓN ARRIBA */
+  .btn-top {
+    align-self: flex-start;
+    font-size: 11px;
+    padding: 4px 10px;
+    margin: 10px;
   }
 
-  .descripcion-corta {
+  /* TITULOS */
+  .titulo-producto {
     font-size: 13px;
-    text-align: left;
+    margin: 0;
   }
 
-  .precio-rojo {
+  .modelo-producto {
     font-size: 16px;
-    text-align: left;
-    margin-top: 4px;
+    margin: 0;
   }
 
-.fade-scroll {
-     transform: scale(1);
-    box-shadow: none;  
-    
-    transition: 
-      box-shadow .5s ease-out,
-      transform .5s ease-out;
+  /* SPECS */
+  .specs {
+    margin: 5px 0;
   }
 
-  .fade-scroll.show {
-    transform: scale(1.02);  /* ligero zoom */
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* sombra premium */
+  .specs li {
+    font-size: 12px;
+    margin-bottom: 2px;
   }
 
+  /* PRECIO + BOTÓN */
+  .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .precio {
+    font-size: 18px;
+    margin-left: 0 !important;
+  text-align: left;
+  }
+
+  .btn-detalles {
+    font-size: 12px;
+    padding: 6px 12px;
+    margin: 0;
+  }
 }
 
 
@@ -1345,6 +1359,87 @@ body.no-scroll {
     height: 280px;
   }
 }
+
+/* BOTÓN SUPERIOR */
+.btn-top {
+  align-self: center; /* 🔥 cambiamos esto */
+  position: relative;
+  top: -15px; /* 🔥 ESTO sí lo mueve de verdad */
+
+  background: #1f5fae;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+/* TITULOS */
+.titulo-producto {
+  font-size: 14px;
+  color: #666;
+   margin: 2px 0 0 0;
+}
+
+.modelo-producto {
+  font-size: 18px;
+  font-weight: bold;
+   margin: 0 0 10px 0;
+}
+
+/* SPECS */
+.specs {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.specs li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.specs i {
+  color: #0a5bd7;
+  width: 18px;
+}
+
+/* PARTE DE ABAJO */
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* PRECIO */
+.precio {
+  color: #0a5bd7;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+/* BOTÓN DETALLES */
+.btn-detalles {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 2px solid #0a5bd7;
+  color: #0a5bd7;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+  margin-left: 32px;
+}
+
+.btn-detalles:hover {
+  background: #0a5bd7;
+  color: white;
+}
+
+
 
  
 
