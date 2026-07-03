@@ -1356,7 +1356,7 @@ body.no-scroll {
 
 /* BOTÓN SUPERIOR */
 .btn-top {
-  align-self: center; /* 🔥 cambiamos esto */
+  align-self: flex-start;
   position: relative;
   top: -15px; /* 🔥 ESTO sí lo mueve de verdad */
 
@@ -1366,7 +1366,7 @@ body.no-scroll {
   border-radius: 20px;
   font-size: 12px;
   text-decoration: none;
-  margin-left: 18px;
+  margin-left: 30px;
 }
 
 /* TITULOS */
