@@ -634,13 +634,7 @@ background:
     width: 90%;
   }
 
-  /* BOTÓN ARRIBA */
-  .btn-top {
-    align-self: flex-start;
-    font-size: 4px;
-    padding: 2px 10px;
-    margin-left: 15px;
-  }
+  
 
   /* TITULOS */
   .titulo-producto {
