@@ -630,7 +630,7 @@ background:
     display: flex;
     flex-direction: column;
     gap: 6px;
-    margin: 0;
+    margin-left: 18px;
     width: 100%;
   }
 
